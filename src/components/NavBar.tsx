@@ -4,12 +4,16 @@ import { HStack, Image } from "@chakra-ui/react";
 import Theme from "@/Theme";
 import SearchInput from "./SearchInput";
 
-const NavBar = () => {
+
+interface Props{
+  onWriteSarchText:(searchText:string)=>void,
+}
+const NavBar = ({onWriteSarchText}:Props) => {
   return (
     <>
       <HStack justifyContent="space-between" padding={1}>
         <Image rounded="md" src={logo} alt="logo error" width={20} />
-        <SearchInput/>
+        <SearchInput onWriteTextSearch={(sT)=>onWriteSarchText(sT)} />
         <Theme />
       </HStack>
     </>
