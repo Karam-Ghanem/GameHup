@@ -1,4 +1,9 @@
-import useData from "./useData"
+import { useQuery } from "@tanstack/react-query";
+import { type FetchResponse } from "@/Services/apiClinet"
+// import apiClinet from "@/Services/apiClinet";
+
+import APIclient from "@/Services/apiClinet";
+
 
 
 interface Platform{
@@ -13,7 +18,13 @@ interface PlatformParent{
     platforms:Platform[]
 }
 
-const usePlatforms = ()=>useData<PlatformParent>('/platforms/lists/parents')
+
+const apiClinet = new APIclient<PlatformParent>('/platforms/lists/parents')
+
+const usePlatforms = ()=>useQuery({
+    queryKey:['Platform'],
+    queryFn:apiClinet.get
+})
 
 
 export default usePlatforms;
