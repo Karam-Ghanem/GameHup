@@ -27,11 +27,4 @@ class APIclient<T>{
 }
 
 
-
-
-
-
-
-
-
 export default APIclient;

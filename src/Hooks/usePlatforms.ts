@@ -1,7 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import { type FetchResponse } from "@/Services/apiClinet"
-// import apiClinet from "@/Services/apiClinet";
-
 import APIclient from "@/Services/apiClinet";
 
 

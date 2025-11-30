@@ -1,7 +1,6 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { type GameQuery }  from "@/App";
-// import apiClinet from "@/Services/apiClinet";
 import APIclient from "@/Services/apiClinet"
 export interface Game {
     id: number;
@@ -29,9 +28,3 @@ const useGames = (gameQuery:GameQuery)=>useQuery<Game[],Error>({
   
   export default useGames;
 
-  // {params: {
-  //   genres:gameQuery?.selectedGenreID,
-  //   parent_platforms:gameQuery?.selectedPlatformID,
-  //   ordering:gameQuery?.selectedSortOrderVALUE,
-  //   search:gameQuery?.searchWord}
-  // }
