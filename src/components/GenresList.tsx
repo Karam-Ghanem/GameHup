@@ -4,16 +4,17 @@ import { Image, Link, Text } from "@chakra-ui/react";
 import { List } from "@chakra-ui/react";
 import cropURL from "@/Services/imageURL";
 import type { GameQuery } from "@/App";
+import Spiner from "./Spiner";
 
 interface Props {
-  onSelectGenre: (genreID: number,genre:string) => void;
-  gameQuery:GameQuery,
+  onSelectGenre: (genreID: number, genre: string) => void;
+  gameQuery: GameQuery;
 }
 
-const GenresList = ({ onSelectGenre,gameQuery}: Props) => {
-  const { data: genres, error } = useGenres();
-  
+const GenresList = ({ onSelectGenre, gameQuery }: Props) => {
+  const { data: genres, error, isLoading } = useGenres();
 
+  if (isLoading) return <Spiner />;
   if (error)
     return (
       <Text color="red" fontWeight="bold">
@@ -32,12 +33,13 @@ const GenresList = ({ onSelectGenre,gameQuery}: Props) => {
                 width="50px"
                 borderRadius={20}
               />
-              
             </List.Indicator>
             <Link
-              onClick={() => onSelectGenre(genre.id,genre.name)}
+              onClick={() => onSelectGenre(genre.id, genre.name)}
               _hover={{ textDecoration: "none" }}
-              fontWeight={gameQuery.selectedGenreID===genre.id?"bold" : "normal"}
+              fontWeight={
+                gameQuery.selectedGenreID === genre.id ? "bold" : "normal"
+              }
             >
               {genre.name}
             </Link>
