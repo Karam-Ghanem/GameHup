@@ -1,12 +1,11 @@
 import { Box, Grid, GridItem, HStack } from "@chakra-ui/react";
-import GameGrid from "./components/GameGrid";
-import GenresList from "./components/GenresList";
-import PlatformSelector from "./components/PlatformSelector";
-import OrderingSelector from "./components/OrderingSelector";
-import DynamicHeading from "./components/DynamicHeading";
+import DynamicHeading from "../components/DynamicHeading";
+import GameGrid from "../components/GameGrid";
+import GenresList from "../components/GenresList";
+import OrderingSelector from "../components/OrderingSelector";
+import PlatformSelector from "../components/PlatformSelector";
 
-
-function App() {
+const HomePage = () => {
   return (
     <>
       <Grid
@@ -14,21 +13,21 @@ function App() {
         templateColumns={{ base: `1fr`, lg: `250px 1fr` }}
       >
         <GridItem area="aside" bg="">
-          <GenresList/>
+          <GenresList />
         </GridItem>
         <GridItem area="main" bg="">
           <DynamicHeading />
           <HStack>
-            <PlatformSelector/>
+            <PlatformSelector />
             <Box marginLeft="50px">
-              <OrderingSelector/>
+              <OrderingSelector />
             </Box>
           </HStack>
-          <GameGrid/>
+          <GameGrid />
         </GridItem>
       </Grid>
     </>
   );
-}
+};
 
-export default App;
+export default HomePage;
