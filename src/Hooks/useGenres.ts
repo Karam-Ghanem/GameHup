@@ -1,8 +1,10 @@
 
 import { useQuery } from "@tanstack/react-query";
 import APIclient from "@/Services/apiClinet";
+import ms from "ms";
 
-const apiClinet = new APIclient('/genres')
+
+const apiClinet = new APIclient<Genre>('/genres')
 
 
 export interface Genre{
@@ -14,7 +16,8 @@ export interface Genre{
 
 const useGenres = ()=>useQuery({
     queryKey:['genres'],
-    queryFn:apiClinet.get
+    queryFn:apiClinet.get,
+    staleTime:ms('24h')
 })
 
 

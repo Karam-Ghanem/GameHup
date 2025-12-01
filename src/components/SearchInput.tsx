@@ -1,12 +1,12 @@
+import  useGameQueryStore from "@/Store/gameQueryStore";
 import { Input, InputGroup } from "@chakra-ui/react";
 import { useRef, type FormEvent } from "react";
 import { FaSearch } from "react-icons/fa";
 
-interface Props {
-  onWriteTextSearch: (searchText: string) => void;
-}
 
-const SearchInput = ({ onWriteTextSearch }: Props) => {
+const SearchInput = () => {
+const setSearchText = useGameQueryStore(s=>s.setSearchText)
+
   const ref = useRef<HTMLInputElement>(null);
   return (
     <>
@@ -14,7 +14,8 @@ const SearchInput = ({ onWriteTextSearch }: Props) => {
         onSubmit={(event: FormEvent) => {
           event.preventDefault();
           if (ref.current) {
-            onWriteTextSearch(ref.current.value);
+            setSearchText(ref.current.value);
+            console.log(ref.current.value);
             ref.current.value = "";
           }
         }}

@@ -1,20 +1,26 @@
+import useGames from "@/Hooks/useGames";
 import usePlatforms from "@/Hooks/usePlatforms";
+import useGameQueryStore from "@/Store/gameQueryStore";
 import { Box, Button, Link, Menu, Portal,Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
 
-interface Props{
-  onSelectPlatform:(platformID:number,platformName:string)=>void,
-}
-const PlatformSelector = ({onSelectPlatform}:Props) => {
+
+const PlatformSelector = () => {
+
+  const setSelectedPlatformID = useGameQueryStore(s=>s.setSelectedPlatformID)
+  // const gameQuery = useGameQueryStore(s=>s.gameQuery)
+
+
   const { data: platforms, error } = usePlatforms();
+
   const [selectedPlatform,setSelectedPlatform] = useState("");
 
   if (error)
     return (
       <Text color="red" fontWeight="bold">
-        {error}
+        {error.message}
       </Text>
     );
   return (
@@ -32,7 +38,7 @@ const PlatformSelector = ({onSelectPlatform}:Props) => {
           <Menu.Content>
             {platforms?.map((plat) => (
               <Menu.Item key={plat.id} value="new-txt" onClick={()=>setSelectedPlatform(plat.name)}>
-                <Link onClick={()=>onSelectPlatform(plat.id,plat.name)} _hover={{ textDecoration:"none"}}>{plat.name}</Link>
+                <Link onClick={()=>setSelectedPlatformID(plat.id)} _hover={{ textDecoration:"none"}}>{plat.name}</Link>
               </Menu.Item>
             ))}
           </Menu.Content>

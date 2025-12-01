@@ -5,15 +5,13 @@ import Theme from "@/Theme";
 import SearchInput from "./SearchInput";
 
 
-interface Props{
-  onWriteSarchText:(searchText:string)=>void,
-}
-const NavBar = ({onWriteSarchText}:Props) => {
+
+const NavBar = () => {
   return (
     <>
       <HStack justifyContent="space-between" padding={1}>
         <Image rounded="md" src={logo} alt="logo error" width={20} />
-        <SearchInput onWriteTextSearch={(sT)=>onWriteSarchText(sT)} />
+        <SearchInput />
         <Theme />
       </HStack>
     </>

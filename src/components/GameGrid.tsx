@@ -3,23 +3,21 @@ import GameCard from "./GameCard";
 import { Box, Text } from "@chakra-ui/react";
 import { SimpleGrid } from "@chakra-ui/react";
 import SkeletonGame from "./SkeletonGame";
-import { type GameQuery } from "@/App";
 
 
 
-interface Props{
-  gameQuery:GameQuery
-}
 
-const GameGrid = ({gameQuery}:Props) => {
-  const { data: games, error, isLoading } = useGames(gameQuery);
+const GameGrid = () => {
+
+
+  const { data: games, error, isLoading } = useGames();
   
   const ske = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
   if (error)
     return (
       <Text color="red" fontWeight="bold">
-        {error}
+        {error.message}
       </Text>
     );
 

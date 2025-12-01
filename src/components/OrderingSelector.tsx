@@ -3,13 +3,18 @@ import orederingList from "@/Data/orderingList";
 
 import { FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
+import useGameQueryStore from "@/Store/gameQueryStore";
 
-interface Props{
-  onSelectSortOrder:(sortOrder:string)=>void,
-}
 
-const OrderingSelector = ({onSelectSortOrder}:Props) => {
-  const [sortOrder, setSortOrder] = useState("");
+
+const OrderingSelector = () => {
+
+  const setSortOrder = useGameQueryStore(s=>s.setSortOrder)
+
+
+  const [sortOrder, setSortOrderr] = useState("");
+
+
   return (
     <>
       <Menu.Root>
@@ -26,11 +31,11 @@ const OrderingSelector = ({onSelectSortOrder}:Props) => {
             <Menu.Content>
               {orederingList.map((item) => (
                 <Menu.Item
-                  onClick={() => setSortOrder(item.label)}
+                  onClick={() => setSortOrderr(item.label)}
                   key={item.value}
                   value="new-txt"
                 >
-                  <Link onClick={()=>onSelectSortOrder(item.value)} _hover={{ textDecoration: "none" }}>{item.label}</Link>
+                  <Link  onClick={()=>setSortOrder(item.value)} _hover={{ textDecoration: "none" }}>{item.label}</Link>
                 </Menu.Item>
               ))}
             </Menu.Content>
