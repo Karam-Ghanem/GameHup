@@ -5,15 +5,10 @@ import { FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
 import useGameQueryStore from "@/Store/gameQueryStore";
 
-
-
 const OrderingSelector = () => {
-
-  const setSortOrder = useGameQueryStore(s=>s.setSortOrder)
-
+  const setSortOrder = useGameQueryStore((s) => s.setSortOrder);
 
   const [sortOrder, setSortOrderr] = useState("");
-
 
   return (
     <>
@@ -35,7 +30,12 @@ const OrderingSelector = () => {
                   key={item.value}
                   value="new-txt"
                 >
-                  <Link  onClick={()=>setSortOrder(item.value)} _hover={{ textDecoration: "none" }}>{item.label}</Link>
+                  <Link
+                    onClick={() => setSortOrder(item.value)}
+                    _hover={{ textDecoration: "none" }}
+                  >
+                    {item.label}
+                  </Link>
                 </Menu.Item>
               ))}
             </Menu.Content>

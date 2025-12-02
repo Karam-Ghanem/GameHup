@@ -1,13 +1,13 @@
-import  useGameQueryStore from "@/Store/gameQueryStore";
+import useGameQueryStore from "@/Store/gameQueryStore";
 import { Input, InputGroup } from "@chakra-ui/react";
 import { useRef, type FormEvent } from "react";
 import { FaSearch } from "react-icons/fa";
-
-
+import { useNavigate } from "react-router-dom";
 const SearchInput = () => {
-const setSearchText = useGameQueryStore(s=>s.setSearchText)
+  const setSearchText = useGameQueryStore((s) => s.setSearchText);
 
   const ref = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
   return (
     <>
       <form
@@ -15,8 +15,8 @@ const setSearchText = useGameQueryStore(s=>s.setSearchText)
           event.preventDefault();
           if (ref.current) {
             setSearchText(ref.current.value);
-            console.log(ref.current.value);
             ref.current.value = "";
+            navigate("/");
           }
         }}
       >

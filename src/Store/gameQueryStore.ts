@@ -4,9 +4,8 @@ export interface GameQuery {
     selectedGenreID?: number;
     selectedPlatformID?: number;
     searchWord?: string;
+    selectedSortOrderVALUE?:string;
   }
-
-
 
 interface  GameQueryStore{
     gameQuery:GameQuery,

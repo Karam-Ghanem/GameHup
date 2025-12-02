@@ -1,24 +1,30 @@
 import { Card, Image } from "@chakra-ui/react";
-import type { Game } from "@/Hooks/useGames";
+import type Game  from "@/entities/Game";
 import Metacritic from "./Metacritic";
 import cropURL from "@/Services/imageURL";
-interface Props{
-  game:Game,
+import { Link } from "react-router-dom";
+interface Props {
+  game: Game;
 }
 
-const GameCard = ({game}:Props) => {
-
+const GameCard = ({ game }: Props) => {
   return (
     <>
-      <Card.Root maxW="sm" overflow="hidden">
-        <Image
-          src={cropURL(game.background_image)}
-          alt="error"
-        />
+      <Card.Root
+        maxW="sm"
+        overflow="hidden"
+        _hover={{
+          transition: "0.7s",
+          transform: "translate(-20px,-20px)",
+        }}
+      >
+        <Image src={cropURL(game.background_image)} alt="error" />
         <Card.Body gap="1">
-          <Card.Title fontSize={22}>{game.name}</Card.Title>
+          <Card.Title fontSize={22}>
+            <Link to={`/games/${game.slug}`}>{game.name}</Link>
+          </Card.Title>
           <Card.Description>
-            <Metacritic metacritic={game.metacritic}/>
+            <Metacritic metacritic={game.metacritic} />
           </Card.Description>
         </Card.Body>
       </Card.Root>

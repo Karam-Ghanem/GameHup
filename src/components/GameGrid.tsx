@@ -4,14 +4,9 @@ import { Box, Text } from "@chakra-ui/react";
 import { SimpleGrid } from "@chakra-ui/react";
 import SkeletonGame from "./SkeletonGame";
 
-
-
-
 const GameGrid = () => {
-
-
   const { data: games, error, isLoading } = useGames();
-  
+
   const ske = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
   if (error)
@@ -20,8 +15,6 @@ const GameGrid = () => {
         {error.message}
       </Text>
     );
-
-
 
   return (
     <>

@@ -23,6 +23,11 @@ class APIclient<T>{
     .get<FetchResponse<T>>(this.endPoint,config)
     .then(res=>res.data.results)
 
+    getGame = (gameId:number|string)=>
+        axiosInstance
+    .get<T>(this.endPoint + '/' + gameId)
+    .then(res=>res.data)
+
     
 }
 

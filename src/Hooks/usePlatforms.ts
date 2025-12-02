@@ -1,21 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import APIclient from "@/Services/apiClinet";
 import ms from "ms";
-
-
-
-interface Platform{
-    id:number,
-    name:string
-    slug:string,
-    image_background:string,
-}
-export interface PlatformParent{
-    id:number,
-    name:string,
-    platforms:Platform[]
-}
-
+import type { PlatformParent } from "../entities/PlatformParent";
 
 const apiClinet = new APIclient<PlatformParent>('/platforms/lists/parents')
 
