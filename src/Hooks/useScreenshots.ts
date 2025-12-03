@@ -1,4 +1,4 @@
-import type { Screenshots } from "@/entities/Screenshots";
+import type Screenshots  from "@/entities/Screenshots";
 import APIclient from "@/Services/apiClinet";
 import { useQuery } from "@tanstack/react-query";
 

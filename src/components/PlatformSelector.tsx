@@ -1,10 +1,8 @@
-import useGames from "@/Hooks/useGames";
 import usePlatforms from "@/Hooks/usePlatforms";
 import useGameQueryStore from "@/Store/gameQueryStore";
 import { Box, Button, Link, Menu, Portal, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
-
 const PlatformSelector = () => {
   const setSelectedPlatformID = useGameQueryStore(
     (s) => s.setSelectedPlatformID

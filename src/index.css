@@ -1,4 +1,9 @@
 form{
     width: 100%;
+}
 
+.main{
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+    transform: translate(18%);
 }

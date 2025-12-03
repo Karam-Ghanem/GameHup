@@ -1,6 +1,6 @@
 import { Badge, HStack, Stack, Box, Text } from "@chakra-ui/react";
 import GameAttrributes from "@/components/GameAttrributes";
-import type { Game } from "@/entities/Game";
+import type Game  from "@/entities/Game";
 
 interface Props {
   game?: Game;

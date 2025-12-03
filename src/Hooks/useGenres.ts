@@ -2,7 +2,7 @@
 import { useQuery } from "@tanstack/react-query";
 import APIclient from "@/Services/apiClinet";
 import ms from "ms";
-import type { Genre } from "../entities/Genre";
+import  type Genre  from "../entities/Genre";
 
 const apiClinet = new APIclient<Genre>('/genres')
 

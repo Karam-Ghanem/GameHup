@@ -3,8 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import useGameQueryStore from "@/Store/gameQueryStore";
 import APIclient from "@/Services/apiClinet"
 import ms from "ms";
-import type { Game } from "../entities/Game";
-
+import type Game from "../entities/Game"
   const apiClinet = new APIclient<Game>('/games')
 
 const useGames = ()=>{
