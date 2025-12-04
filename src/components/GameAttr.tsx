@@ -38,7 +38,6 @@ const GameAttr = ({ game }: Props) => {
           </Box>
         </GridItem>
         <GridItem marginBottom={10} >
-          {" "}
           <Box bg="" marginRight={40}>
             <GameAttrributes term="Metascore">
               <Stack direction="row">
@@ -54,7 +53,7 @@ const GameAttr = ({ game }: Props) => {
             </GameAttrributes>
           </Box>
         </GridItem>
-        <GridItem marginBottom={10}>
+        <GridItem marginBottom={10} marginLeft="-80px">
           <Box bg="">
             <GameAttrributes term="WebSite">
               <Text>{game?.website}</Text>
