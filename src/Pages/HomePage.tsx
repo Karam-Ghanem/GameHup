@@ -4,7 +4,6 @@ import GameGrid from "../components/GameGrid";
 import GenresList from "../components/GenresList";
 import OrderingSelector from "../components/OrderingSelector";
 import PlatformSelector from "../components/PlatformSelector";
-
 const HomePage = () => {
   return (
     <>
@@ -12,9 +11,11 @@ const HomePage = () => {
         templateAreas={{ base: ` "main"`, lg: `"aside main"` }}
         templateColumns={{ base: `1fr`, lg: `250px 1fr` }}
       >
-        <GridItem area="aside" bg="">
-          <GenresList />
-        </GridItem>
+        <Box display={{ base: "none", md: "block" }}>
+          <GridItem area="aside" bg="">
+            <GenresList />
+          </GridItem>
+        </Box>
         <GridItem area="main" bg="">
           <DynamicHeading />
           <HStack>
