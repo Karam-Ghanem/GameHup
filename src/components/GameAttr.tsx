@@ -1,6 +1,5 @@
 import {
   Badge,
-  HStack,
   Stack,
   Box,
   Text,
@@ -65,13 +64,6 @@ const GameAttr = ({ game }: Props) => {
         </GridItem>
       </SimpleGrid>
 
-      {/* <HStack marginBottom={10} marginTop={30}> */}
-
-      {/* </HStack> */}
-
-      {/* <HStack> */}
-
-      {/* </HStack> */}
     </>
   );
 };
