@@ -6,6 +6,6 @@ form{
 @media(max-width:768px){
     .main{
         transform: translate(18%);
-        width: 100%;
+        width: 80%;
     }
 }
