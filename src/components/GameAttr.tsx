@@ -53,7 +53,7 @@ const GameAttr = ({ game }: Props) => {
             </GameAttrributes>
           </Box>
         </GridItem>
-        <GridItem marginBottom={10} marginLeft="-80px">
+        <GridItem marginBottom={10} marginLeft="-50px">
           <Box bg="">
             <GameAttrributes term="WebSite">
               <Text>{game?.website}</Text>

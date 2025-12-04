@@ -22,7 +22,7 @@ const GameDetails = () => {
     <>
       <SimpleGrid columns={{ base: 1, sm: 1, md: 2 }} padding={10}>
         <Box>
-          <Heading paddingBottom={4} size="4xl">
+          <Heading paddingBottom={4} size="4xl" marginLeft="-30px">
             {game?.name}
           </Heading>
             <ExbandableText>{game?.description_raw || ""}</ExbandableText>
