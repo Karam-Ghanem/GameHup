@@ -4,7 +4,6 @@ import { HStack, Image } from "@chakra-ui/react";
 import Theme from "@/Theme";
 import SearchInput from "./SearchInput";
 import { Link } from "react-router-dom";
-
 const NavBar = () => {
   return (
     <>

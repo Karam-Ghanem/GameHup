@@ -14,7 +14,7 @@ const ExbandableText = ({ children }: Props) => {
 
   return (
     <>
-      <Text>
+      <Text className="exp">
         {exbandable ? text : text + " ....."}
         <Button
           colorPalette="teal"

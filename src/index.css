@@ -4,9 +4,10 @@ form{
 
 
 @media(max-width:768px){
+    .exp,
     .main{
         transform: translate(20%);
-        width: 100%;
+        width: 95%;
         margin-left: 50%;
         transform: translateX(-50%);
     }
