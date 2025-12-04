@@ -19,7 +19,6 @@ const ExbandableText = ({ children }: Props) => {
         <Button
           colorPalette="teal"
           size="sm"
-          marginLeft={2}
           onClick={() => setExbandable(!exbandable)}
         >
           {exbandable ? "Show Less" : "Show More"}
