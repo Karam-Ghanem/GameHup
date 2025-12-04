@@ -2,8 +2,9 @@ form{
     width: 100%;
 }
 
-.main{
-    /* margin-right: auto; */
-    /* margin-left: auto; */
-    transform: translate(18%);
+
+@media(max-width:768px){
+    .main{
+        transform: translate(18%);
+    }
 }
